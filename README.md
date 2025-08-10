@@ -4,9 +4,11 @@
 
 ## 📷 Скриншоты
 
-![Главный экран](screenshots/1.png)
-![Экран деталей](screenshots/2.png)
-![Экран цен](screenshots/3.png)
+<p align="center">
+  <img src="screenshots/1.png" alt="Экран 1" width="250"/>
+  <img src="screenshots/2.png" alt="Экран 2" width="250"/>
+  <img src="screenshots/3.png" alt="Экран 3" width="250"/>
+</p>
 
 
 ## 🚀 Установка

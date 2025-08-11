@@ -16,7 +16,8 @@
 1. Клонируйте репозиторий:
    
 git clone https://github.com/JLNap/testDoctors.git
-3. Откройте проект в Xcode.
+
+2. Откройте проект в Xcode.
 
 ## ✨ Особенности
 

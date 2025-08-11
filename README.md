@@ -14,7 +14,7 @@
 ## 🚀 Установка
 
 1. Клонируйте репозиторий:
-https://github.com/JLNap/testDoctors.git
+git clone https://github.com/JLNap/testDoctors.git
 2. Откройте проект в Xcode.
 
 ## ✨ Особенности

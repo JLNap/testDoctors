@@ -45,16 +45,31 @@ final class MainVM: ObservableObject {
             return "arrow.down"
         }
     }
-    
     var sortedDoctors: [Doctor] {
+        let lowercasedText = text.lowercased()
+
+        let filtered = doctors.filter { doctor in
+            let fullName = [
+                doctor.lastName,
+                doctor.firstName,
+                doctor.patronymic ?? ""
+            ].joined(separator: " ").lowercased()
+            
+            let specialization = doctor.specialization.first?.name.lowercased() ?? ""
+            
+            return lowercasedText.isEmpty
+                || fullName.contains(lowercasedText)
+                || specialization.contains(lowercasedText)
+        }
+
         let sorted: [Doctor]
         switch selectedSort {
         case .price:
-            sorted = doctors.sorted { ($0.videoChatPrice ?? 0) < ($1.videoChatPrice ?? 0) }
+            sorted = filtered.sorted { ($0.videoChatPrice ?? 0) < ($1.videoChatPrice ?? 0) }
         case .seniority:
-            sorted = doctors.sorted { ($0.seniority ?? 0) < ($1.seniority ?? 0) }
+            sorted = filtered.sorted { ($0.seniority ?? 0) < ($1.seniority ?? 0) }
         case .rating:
-            sorted = doctors.sorted { ($0.ratingsRating ?? 0) < ($1.ratingsRating ?? 0) }
+            sorted = filtered.sorted { ($0.ratingsRating ?? 0) < ($1.ratingsRating ?? 0) }
         }
         return sortDirection == .ascending ? sorted : sorted.reversed()
     }
